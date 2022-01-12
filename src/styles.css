@@ -1,0 +1,25 @@
+.nav-logo{
+    display: flex;
+    align-items: center;
+}
+
+.add-dash-cart{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 200px;
+}
+
+.background {
+  background-image: url('../public/backg-index.jpg');
+  height: 100vh;
+}
+
+/* .index-container{
+  height: 100vh
+} */
+
+*{
+  /* font-family: 'Jacques Francois', serif; */
+  font-family: 'Inter', sans-serif;
+}

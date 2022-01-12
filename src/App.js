@@ -1,23 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
 
-function App() {
+import './App.css';
+import NavBar from './components/NavBar';
+import Title from './components/Title'; 
+import ItemList from './components/ItemList'; 
+import Index from './components/Index';
+
+const App = () => {
+/*   const [name, setName] = useState("Lean"); */
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="App background">
+      <NavBar />
+      {/* <Title titulo="Soy un titulo" />
+      <Title titulo="Soy otro titulo" /> */}
+      <Title />
+
+      <Index />
+
+{/*       <div onClick={()=>setName("Leo")}>
+        <h1>{name}</h1>
+      </div> */}
+
+      <ItemList />
+      
     </div>
   );
 }
