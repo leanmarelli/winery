@@ -9,7 +9,6 @@ const Index = () => {
         <Fragment>
             <Container>
             <div className="index-container">
-                <h1 className="text-light">Crypto Winery</h1>
             </div>
             </Container>
         </Fragment>

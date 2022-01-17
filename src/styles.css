@@ -15,11 +15,15 @@
   height: 100vh;
 }
 
-/* .index-container{
+.index-container{
   height: 100vh
-} */
+}
 
 *{
   /* font-family: 'Jacques Francois', serif; */
   font-family: 'Inter', sans-serif;
+}
+
+.logo{
+  width: 120px
 }
