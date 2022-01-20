@@ -4,7 +4,7 @@ import { CartPlus, CartDash } from 'react-bootstrap-icons';
 import '../styles.css';
 
 
-const ItemCount = () => {
+const ItemCount = ({stock, initial, onAdd}) => {
 
     const [itemsQty, setItemsQty] = useState(1);
 
@@ -18,13 +18,14 @@ const ItemCount = () => {
             console.log("se desmonto el componente")
         }
     }, [itemsQty])
+    
 
     return (
         <Fragment>
             <div className="add-dash-cart mx-auto">
-                <Button onClick={() => setItemsQty(itemsQty - 1)} variant="danger"><CartDash color="white" size={22} /></Button>
+                <Button onClick={() => setItemsQty(itemsQty - 1)} variant="danger"><CartDash color="white" size={19} /></Button>
                 <h4>{itemsQty}</h4>
-                <Button onClick={() => setItemsQty(itemsQty + 1)} variant="danger"> <CartPlus color="white" size={22} /></Button>
+                <Button onClick={() => setItemsQty(itemsQty + 1)} variant="danger"> <CartPlus color="white" size={19} /></Button>
             </div>
         </Fragment>
     )

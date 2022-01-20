@@ -12,7 +12,7 @@ const NavBar = () => {
                 <Container>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Brand href="#home">
-                        <img src="logo.jpg" alt="" className="logo"/>
+                        <img src="logo.png" alt="" className="logo"/>
                     </Navbar.Brand>
                     
                     <Navbar.Collapse id="responsive-navbar-nav">

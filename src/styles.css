@@ -19,8 +19,20 @@
   height: 100vh
 }
 
+.index-content{
+  margin-top: -7rem;
+}
+
+.index-content h1{
+  font-size: 3rem;
+}
+
+.jacques {
+  font-family: 'Jacques Francois', serif;
+}
+
 *{
-  /* font-family: 'Jacques Francois', serif; */
+  /*  */
   font-family: 'Inter', sans-serif;
 }
 
