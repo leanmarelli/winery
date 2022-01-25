@@ -1,31 +1,24 @@
-
 import './App.css';
 import React, { Fragment, useState, useEffect } from "react";
-import NavBar from './components/NavBar';
-import Title from './components/Title'; 
-import ItemList from './components/ItemList'; 
-import Item from './components/Item'; 
-import Index from './components/Index';
-import Footer from './components/Footer';
-import { getPricesFromBlockchain } from './services/Prices.js';
+import Home from './components/Home';
+import Layout from './components/Layout';
+import NoPage from './components/NoPage';
+import Loading from './components/Loading';
+import ItemDetailContainer from './components/ItemDetailContainer';
+import { BrowserRouter, Routes, Route  } from 'react-router-dom';
 
 const App = () => {
-/*   const [name, setName] = useState("Lean"); */
 
   return (
-    <div className="App background">
-      <NavBar />
-      
-      <Title />
-
-      {/* <Index /> */}
-
-      <ItemList />
-    
-      <Footer />
-      
-    </div>
-  );
+    <BrowserRouter>
+        <Routes>
+          <Route path="/" exact element={<Layout/>} />
+          <Route index element={<Home/>} />
+          <Route path="/product" exact element={< ItemDetailContainer />} />
+          <Route path="/*" exact element={<NoPage/>} />
+        </Routes>
+    </BrowserRouter>
+  )
 }
 
 export default App;

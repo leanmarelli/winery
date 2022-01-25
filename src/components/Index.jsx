@@ -8,8 +8,8 @@ const Index = () => {
     return (
         <Fragment>
             <Container>
-            <div className="index-container">
-            </div>
+                <div className="index-container">
+                </div>
             </Container>
         </Fragment>
     )

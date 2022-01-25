@@ -3,6 +3,7 @@ import { Navbar, Nav, Container } from 'react-bootstrap';
 import { Person, Search } from 'react-bootstrap-icons';
 import '../styles.css';
 import CartWidget from './CartWidget'
+import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 
 
 const NavBar = () => {
@@ -11,21 +12,20 @@ const NavBar = () => {
             <Navbar collapseOnSelect expand="lg" bg="transparent" variant="dark">
                 <Container>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-                    <Navbar.Brand href="#home">
-                        <img src="logo.png" alt="" className="logo"/>
-                    </Navbar.Brand>
+                    <Link to="/">
+                        <Navbar.Brand href="#home">
+                            <img src="logo.png" alt="" className="logo"/>
+                        </Navbar.Brand>
+                    </Link>
                     
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="mx-auto">
+                            {/* <NavLink to={"/home"} activeClassName="active" className="nav-link">Wine</NavLink>
+                            <NavLink to={"/categories"} activeClassName="active" className="nav-link">Categorias</NavLink> */}
                             <Nav.Link className="me-5" href="#wine">Wine</Nav.Link>
                             <Nav.Link className="me-5" href="#club">Club CryptoWiner</Nav.Link>
                             <Nav.Link className="me-5" href="#about">About us</Nav.Link>
                             <Nav.Link className="me-5" href="#catalog">Contact</Nav.Link>
-                            {/* <NavDropdown title="Club Crynery" id="collasible-nav-dropdown">
-                                <NavDropdown.Item href="#action/3.1">Gift</NavDropdown.Item>
-                                <NavDropdown.Item href="#action/3.2">Membership</NavDropdown.Item>
-                                <NavDropdown.Item href="#action/3.3">Delivery</NavDropdown.Item>
-                            </NavDropdown> */}
                         </Nav>
                         <div className="nav-logo">
                             <div className="me-3">

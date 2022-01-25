@@ -39,3 +39,13 @@
 .logo{
   width: 120px
 }
+
+.item-card{
+  min-height: 500px 
+}
+
+.alineacion-contenido{
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+}
