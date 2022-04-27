@@ -5,7 +5,9 @@ const Loading = ({ price }) => {
 
     return (
         <Fragment>
-            <Spinner animation="grow" variant="danger" />
+            <div className="d-flex justify-content-center">
+                <iframe src="https://embed.lottiefiles.com/animation/77415"></iframe>
+            </div>
         </Fragment>
     )
 }

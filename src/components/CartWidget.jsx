@@ -6,7 +6,7 @@ const CartWidget = () => {
 
     return (
         <Fragment>
-            <Cart color="white" className="me-3" size={22} />
+            <Cart className="me-3 texto-primario" size={22} />
         </Fragment>
     )
 }

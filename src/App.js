@@ -1,4 +1,3 @@
-import './App.css';
 import React, { Fragment, useState, useEffect } from "react";
 import Home from './components/Home';
 import Layout from './components/Layout';
@@ -12,10 +11,11 @@ const App = () => {
   return (
     <BrowserRouter>
         <Routes>
-          <Route path="/" exact element={<Layout/>} />
-          <Route index element={<Home/>} />
-          <Route path="/product" exact element={< ItemDetailContainer />} />
-          <Route path="/*" exact element={<NoPage/>} />
+          <Route path="/" element={<Layout/>} >
+            <Route index element={<Home/>} />
+            <Route path="/product/:id" element={< ItemDetailContainer />} />
+            <Route path="*" exact element={<NoPage/>} />
+          </Route>
         </Routes>
     </BrowserRouter>
   )

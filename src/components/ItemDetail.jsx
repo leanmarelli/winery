@@ -4,14 +4,16 @@ import '../styles.css';
 import ItemCount from './ItemCount'
 import Price from './Price'
 
-const ItemDetail = ({ name, img, stock, price, description }) => {
+const ItemDetail = ({ product }) => {
+
+    const { id, name, img, stock, price, description } = product;
 
     return (
         <Card border="danger" className="text-center m-3 item-card">
             <Card.Img variant="top" src={img} className="p-3 mx-auto" />
             <Card.Body className="alineacion-contenido">
                 <Card.Title>{name}</Card.Title>
-                <Price price={`${price}`} />
+                <Price price={`${price} * ${stock}`} /> 
                 <Card.Text>
                     Descripcion: {description}
                 </Card.Text>

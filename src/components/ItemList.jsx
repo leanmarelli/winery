@@ -4,28 +4,24 @@ import '../styles.css';
 import Item from './Item';
 import Loading from './Loading';
 import { getProductsFromCategory } from '../services/Products';
+import { useOutletContext } from 'react-router-dom';
 
 
-const ItemList = () => {
+const ItemList = ({}) => {
 
-    const [products, setProducts] = useState([]);
-    const [loading, setLoading] = useState(false);
+    const [loading, setLoading] = useOutletContext();
 
-    useEffect(() => {
-        let mounted = true;
-        setLoading(true)
-        getProductsFromCategory("MLA1404")
-            .then(items => {
-                if (mounted) {
-                    console.log(items.results)
-                    setProducts(items.results)
-                    setTimeout(() => {
-                        setLoading(false)
-                    },3000)
-                }
-            })
-        return () => mounted = false;
-    }, [])
+    const [products, setProducts] = useState([
+        { id: 1, name: "Luigi Bosca", description: "Vino tinto", stock: 15, price: 140, img: "https://luigiboscaar.vteximg.com.br/arquivos/ids/156755-650-650/200928-Luigi_Bosca-T1-Malbec-CAM2.png?v=637588102544070000" },
+        { id: 2, name: "Felipe Rutini", description: "Vino tinto", stock: 1, price: 150, img: "https://images.vivino.com/thumbs/hljzKlrcQLW9kiYwechDbQ_pb_600x600.png" },
+        { id: 3, name: "La Linda", description: "Vino blanco", stock: 3, price: 94, img: "https://www.jordanwines.com/wp-content/uploads/2018/05/Jordan-Unoaked-Chardonnay-NV.png" },
+        { id: 4, name: "Luigi Bosca", description: "Vino tinto", stock: 6, price: 290, img: "https://luigiboscaar.vteximg.com.br/arquivos/ids/156755-650-650/200928-Luigi_Bosca-T1-Malbec-CAM2.png?v=63758810254407000" },
+        { id: 5, name: "Felipe Rutini", description: "Vino tinto", stock: 8, price: 89, img: "https://images.vivino.com/thumbs/hljzKlrcQLW9kiYwechDbQ_pb_600x600.png" },
+        { id: 6, name: "Trumpeter", description: "Vino tinto", stock: 3, price: 214, img: "https://www.jordanwines.com/wp-content/uploads/2018/05/Jordan-Unoaked-Chardonnay-NV.png" },
+        { id: 7, name: "Luigi Bosca", description: "Vino tinto", stock: 5, price: 243, img: "https://luigiboscaar.vteximg.com.br/arquivos/ids/156755-650-650/200928-Luigi_Bosca-T1-Malbec-CAM2.png?v=63758810254407000" },
+        { id: 8, name: "Felipe Rutini", description: "Vino tinto", stock: 2, price: 212, img: "https://images.vivino.com/thumbs/hljzKlrcQLW9kiYwechDbQ_pb_600x600.png" },
+        { id: 9, name: "Cosecha tardia", description: "Vino blanco", stock: 4, price: 999, img: "https://www.jordanwines.com/wp-content/uploads/2018/05/Jordan-Unoaked-Chardonnay-NV.png" }
+    ]);
 
 
     return (
@@ -38,7 +34,7 @@ const ItemList = () => {
                 <Row xs={1} md={4} className="g-4">
                     {products.map((product) => (
                         <Col>
-                            <Item stock={product.sold_quantity} name={product.title} description={product.description} img={product.thumbnail} price={product.price} />
+                            <Item key={product.id} product={product} />
                         </Col>
                     ))}
                 </Row>
